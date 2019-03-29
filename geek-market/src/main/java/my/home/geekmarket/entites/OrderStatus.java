@@ -1,13 +1,8 @@
 package my.home.geekmarket.entites;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 import javax.persistence.*;
 
 @Entity
-@Data
-@NoArgsConstructor
 @Table(name = "orders_statuses")
 public class OrderStatus {
     @Id
@@ -21,5 +16,24 @@ public class OrderStatus {
     @Override
     public String toString() {
         return "OrderStatus{" + "id=" + id + ", title='" + title + '\'' + '}';
+    }
+
+    public OrderStatus() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 }
