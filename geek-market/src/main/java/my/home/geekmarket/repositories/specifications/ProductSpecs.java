@@ -16,5 +16,5 @@ public class ProductSpecs {
     public static Specification<Product> priceLesserThanOrEq(double value) {
         return (Specification<Product>) (root, criteriaQuery, criteriaBuilder) -> criteriaBuilder.lessThanOrEqualTo(root.get("price"), value);
     }
-    
+
 }
