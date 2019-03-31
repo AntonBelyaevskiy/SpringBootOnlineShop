@@ -67,7 +67,7 @@ public class PayPalController {
         } catch (PayPalRESTException e) {
             e.printStackTrace();
         }
-        return "result";
+        return "order-result";
     }
 
     @GetMapping("/success")

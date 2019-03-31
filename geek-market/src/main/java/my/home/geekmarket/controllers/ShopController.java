@@ -125,9 +125,9 @@ public class ShopController {
         }
         User user = userService.findByUserName(principal.getName());
         Order order = orderService.makeOrder(shoppingCartService.getCurrentCart(httpServletRequest.getSession()), user);
-        List<DeliveryAddress> deliveryAddressList = deliveryAddressService.getUserAddresses(user.getId());
+        List<DeliveryAddress> deliveryAddresses = deliveryAddressService.getUserAddresses(user.getId());
         model.addAttribute("order", order);
-        model.addAttribute("deliveryAddressList", deliveryAddressList);
+        model.addAttribute("deliveryAddresses", deliveryAddresses);
         return "order-filler";
     }
 

@@ -54,6 +54,9 @@
                     </form>
                 </li>
             </ul>
+            <a sec:authorize="!isAuthenticated()"
+               th:href="@{/register/showRegistrationForm}"
+               class="btn btn-secondary btn-sm">Регистрация</a>
         </div>
     </nav>
     <div class="visible-md" style="height:80px;"></div>

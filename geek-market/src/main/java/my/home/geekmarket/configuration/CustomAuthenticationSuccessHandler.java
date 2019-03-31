@@ -2,6 +2,7 @@ package my.home.geekmarket.configuration;
 
 import my.home.geekmarket.entites.User;
 import my.home.geekmarket.services.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.stereotype.Component;
@@ -17,6 +18,7 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
 
     private UserService userService;
 
+    @Autowired
     public void setUserService(UserService userService) {
         this.userService = userService;
     }

@@ -9,7 +9,7 @@ CREATE TABLE users (
   first_name            VARCHAR(50) NOT NULL,
   last_name             VARCHAR(50) NOT NULL,
   email                 VARCHAR(50) NOT NULL,
-  phone                 VARCHAR(15) NOT NULL,
+  phone                 VARCHAR(15),
   PRIMARY KEY (id)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
@@ -142,7 +142,7 @@ VALUES
 
 INSERT INTO users (username,password,first_name,last_name,email,phone)
 VALUES
-('admin','$2a$04$Fx/SX9.BAvtPlMyIIqqFx.hLY2Xp8nnhpzvEEVINvVpwIPbA3v/.i','Admin','Admin','admin@gmail.com','+79881111111');
+('admin','$2a$10$TSfA3sGMnQwyQ2ccoBCZEeaJWB2IhvdEy7Dueb9eZw3EP8BcpMQs2','Admin','Admin','admin@gmail.com','+79881111111');
 
 INSERT INTO users_roles (user_id, role_id)
 VALUES
