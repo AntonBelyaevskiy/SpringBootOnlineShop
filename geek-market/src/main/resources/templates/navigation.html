@@ -24,39 +24,40 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item" th:classappend="${activeTab == 'Shop' ? 'active' : ''}">
-                    <a class="nav-link" th:href="@{/shop/?page=1}">Товары<span class="sr-only">(current)</span></a>
+                    <a class="nav-link m-1" th:href="@{/shop/?page=1}">Товары<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item" th:classappend="${activeTab == 'Cart' ? 'active' : ''}">
-                    <a class="nav-link" th:href="@{/cart}">Корзина<span class="sr-only">(current)</span></a>
+                    <a class="nav-link m-1" th:href="@{/cart}">Корзина<span class="sr-only">(current)</span></a>
                 </li>
                 <li sec:authorize="isAuthenticated()" class="nav-item"
                     th:classappend="${activeTab == 'Profile' ? 'active' : ''}">
-                    <a class="nav-link" th:href="@{/profile}">Профиль</a>
+                    <a class="nav-link m-1" th:href="@{/profile}">Профиль</a>
                 </li>
                 <li sec:authorize="hasRole('ADMIN')" class="nac-item"
                     th:classappend="${activeTab == 'AdminDashboard' ? 'active' : ''}">
-                    <a class="nav-link" th:href="@{/admin}">Админка</a>
+                    <a class="nav-link m-1" th:href="@{/admin}">Админка</a>
                 </li>
                 <li sec:authorize="isAuthenticated()" class="nav-item">
                     <form th:action="@{/logout}" method="post">
-                        <input type="submit" class="btn btn-danger" value="Logout"/>
+                        <input type="submit" class="btn m-1" value="Logout"/>
                     </form>
                 </li>
                 <li sec:authorize="isAnonymous()" class="nav-item">
                     <form class="align-middle" th:action="@{/authenticateTheUser}" method="post">
                         <div class="input-group-prepend">
-                            <input class="form-control" type="text" placeholder="Логин" name="username"
+                            <input class="form-control m-1" type="text" placeholder="Логин" name="username"
                                    aria-describedby="inputGroup-sizing-sm">
-                            <input class="form-control" type="password" placeholder="Пароль" name="password"
+                            <input class="form-control m-1" type="password" placeholder="Пароль" name="password"
                                    aria-describedby="inputGroup-sizing-sm">
-                            <button class="btn btn-secondary btn-sm" type="submit">Войти</button>
+                            <button class="btn btn-primary m-1" type="submit">Войти</button>
                         </div>
                     </form>
                 </li>
+                <li sec:authorize="!isAuthenticated()" class="nav-item">
+                    <a th:href="@{/register/showRegistrationForm}"
+                       class="btn btn-primary m-1">Регистрация</a>
+                </li>
             </ul>
-            <a sec:authorize="!isAuthenticated()"
-               th:href="@{/register/showRegistrationForm}"
-               class="btn btn-secondary btn-sm">Регистрация</a>
         </div>
     </nav>
     <div class="visible-md" style="height:80px;"></div>
